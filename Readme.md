@@ -83,7 +83,6 @@ var x = new xoom({
 
 <body>
 
-<div>
     <form>
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your name.." x-model="modelPerson" value="{firstName}">
@@ -107,12 +106,11 @@ var x = new xoom({
       </tr>
       <tr x-loop="item of model5">
             <td>{item/orderno}</td>
-            <td>{item/name/fname}</td>
+            <td>{item/name}</td>
             <td>{item/quantity}</td>
         </tr>
   </table>
 
-    </div>
 </body>
 
 </html>
