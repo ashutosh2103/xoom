@@ -70,7 +70,12 @@ var x = new xoom({
                     { name: "Ford", "models": ["Fiesta", "Focus", "Mustang"] },
                     { name: "BMW", "models": ["320", "X3", "X5"] },
                     { name: "Fiat", "models": ["500", "Panda"] }
-                ]
+                ],
+            modelOrders: [
+                { orderno: 10001, name: 'Laptop', quantity: 1000 },
+                { orderno: 10002, name: 'Mobile', quantity: 2000 },
+                { orderno: 10003, name: 'Headphone', quantity: 3000 }
+            ]
         }
     });
 
@@ -93,6 +98,20 @@ var x = new xoom({
         <p x-model="modelCars">Car Models: {2/models/0} , {2/models/1} </p>
     
     </form>
+
+    <table>
+      <tr>
+          <th>Order</th>
+          <th>Name</th>
+          <th>Quanity</th>
+      </tr>
+      <tr x-loop="item of model5">
+            <td>{item/orderno}</td>
+            <td>{item/name/fname}</td>
+            <td>{item/quantity}</td>
+        </tr>
+  </table>
+
     </div>
 </body>
 
