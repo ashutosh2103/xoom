@@ -50,9 +50,9 @@
         { name: "Fiat", "models": ["500", "Panda"] }
       ],
       modelOrders: [
-        { orderno: 10001, name: 'Laptop', quantity: 1000 },
-        { orderno: 10002, name: 'Mobile', quantity: 2000 },
-        { orderno: 10003, name: 'Headphone', quantity: 3000 }
+        { orderno: 10001, name: 'Laptop', quantity: 1000, customer: {firstName: "John", lastName: "Doe"} },
+        { orderno: 10002, name: 'Mobile', quantity: 2000 , customer: {firstName: "Allen", lastName: "Dirk"}},
+        { orderno: 10003, name: 'Headphone', quantity: 3000 , customer: {firstName: "Robert", lastName: "Pat"}}
       ]
     }
   });
@@ -85,11 +85,13 @@
           <th>Order</th>
           <th>Name</th>
           <th>Quanity</th>
+          <th>Customer</th>
       </tr>
       <tr x-loop="item of modelOrders">
         <td>{item/orderno}</td>
         <td>{item/name}</td>
         <td>{item/quantity}</td>
+        <td>{item/customer/firstName} {item/customer/lastName}</td>
     </tr>
   </table>
 </body>
